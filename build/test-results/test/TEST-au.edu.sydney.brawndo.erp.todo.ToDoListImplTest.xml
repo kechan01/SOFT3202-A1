@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" tests="21" skipped="0" failures="0" errors="0" timestamp="2023-03-24T08:14:00" hostname="DESKTOP-SEBBPG2" time="45.936">
+  <properties/>
+  <testcase name="removeIdExist()" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.002"/>
+  <testcase name="findOneNotExist()" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.001"/>
+  <testcase name="removeIdNotExist()" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.001"/>
+  <testcase name="addTaskNullId()" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.001"/>
+  <testcase name="addTaskNullToManualToNullId()" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.001"/>
+  <testcase name="findAllTasks()" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.001"/>
+  <testcase name="findOneExist()" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.0"/>
+  <testcase name="findAllValidParam" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.201"/>
+  <testcase name="findAllCompletedAndNot" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.004"/>
+  <testcase name="addTaskTimeTest" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.281"/>
+  <testcase name="findAllInValidParam" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.112"/>
+  <testcase name="clearTest" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.007"/>
+  <testcase name="addTaskLocationNotEmpty" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.057"/>
+  <testcase name="findAllParamInvalidTime" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.08"/>
+  <testcase name="findAllValidTime" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.037"/>
+  <testcase name="addTaskTimeNullTest" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.022"/>
+  <testcase name="addTaskManualId" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.02"/>
+  <testcase name="addTaskManualIdRepeat" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.038"/>
+  <testcase name="findAllInValidTime" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.058"/>
+  <testcase name="addTaskLocationTooLong" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.18"/>
+  <testcase name="addTaskLocationEmptyNull" classname="au.edu.sydney.brawndo.erp.todo.ToDoListImplTest" time="0.087"/>
+  <system-out><![CDATA[Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+Description contains!
+timestamp = 2023-03-24T19:14:45.701677400, ToDoListImplTest:findAllValidParam = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 64         | # of all combined edge cases
+edge-cases#tried = 64         | # of edge cases tried in current run
+seed = -2882400983144371603   | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:45.704677300, ToDoListImplTest:findAllCompletedAndNot = 
+                              |-----------------------jqwik-----------------------
+tries = 2                     | # of calls to property
+checks = 2                    | # of not rejected calls
+generation = EXHAUSTIVE       | parameters are exhaustively generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = 1302207155835278129    | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:45.986726900, ToDoListImplTest:addTaskTimeTest = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 6          | # of all combined edge cases
+edge-cases#tried = 6          | # of edge cases tried in current run
+seed = -1231885639930024316   | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:46.099246900, ToDoListImplTest:findAllInValidParam = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 64         | # of all combined edge cases
+edge-cases#tried = 64         | # of edge cases tried in current run
+seed = -8085765325245628308   | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:46.107748300, ToDoListImplTest:clearTest = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = -3355482079186398282   | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:46.165758400, ToDoListImplTest:addTaskLocationNotEmpty = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = 502366571649784958     | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:46.246272100, ToDoListImplTest:findAllParamInvalidTime = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 64         | # of all combined edge cases
+edge-cases#tried = 62         | # of edge cases tried in current run
+seed = -514975918432568499    | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:46.281778600, ToDoListImplTest:findAllValidTime = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 32         | # of all combined edge cases
+edge-cases#tried = 32         | # of edge cases tried in current run
+seed = 516447941934433831     | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:46.305782500, ToDoListImplTest:addTaskTimeNullTest = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = -5044637706985103925   | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:46.326286600, ToDoListImplTest:addTaskManualId = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 9          | # of all combined edge cases
+edge-cases#tried = 9          | # of edge cases tried in current run
+seed = -6894908215272919204   | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:46.364793500, ToDoListImplTest:addTaskManualIdRepeat = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 9          | # of all combined edge cases
+edge-cases#tried = 9          | # of edge cases tried in current run
+seed = 1302602959972395337    | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:46.423803800, ToDoListImplTest:findAllInValidTime = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 32         | # of all combined edge cases
+edge-cases#tried = 32         | # of edge cases tried in current run
+seed = -1957720928748774765   | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:46.603834600, ToDoListImplTest:addTaskLocationTooLong = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = -5357192391915992622   | random seed to reproduce generated values
+
+
+timestamp = 2023-03-24T19:14:46.691350200, ToDoListImplTest:addTaskLocationEmptyNull = 
+                              |-----------------------jqwik-----------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = -674274282063820301    | random seed to reproduce generated values
+
+
+]]></system-out>
+  <system-err><![CDATA[Mar 24, 2023 7:14:46 PM net.jqwik.engine.execution.CheckedProperty maybeWarnOnMultipleTriesWithoutForallParameters
+WARNING: Running Property [ToDoListImplTest:clearTest] in container [au.edu.sydney.brawndo.erp.todo.ToDoListImplTest] without any @ForAll parameters for 1000 tries.
+    Maybe you want to change it into an @Example?
+Mar 24, 2023 7:14:46 PM net.jqwik.engine.execution.CheckedProperty maybeWarnOnMultipleTriesWithoutForallParameters
+WARNING: Running Property [ToDoListImplTest:addTaskTimeNullTest] in container [au.edu.sydney.brawndo.erp.todo.ToDoListImplTest] without any @ForAll parameters for 1000 tries.
+    Maybe you want to change it into an @Example?
+Mar 24, 2023 7:14:46 PM net.jqwik.engine.execution.CheckedProperty maybeWarnOnMultipleTriesWithoutForallParameters
+WARNING: Running Property [ToDoListImplTest:addTaskLocationEmptyNull] in container [au.edu.sydney.brawndo.erp.todo.ToDoListImplTest] without any @ForAll parameters for 1000 tries.
+    Maybe you want to change it into an @Example?
+]]></system-err>
+</testsuite>
