@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">10</div>
+<div class="counter">12</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.963s</div>
+<div class="counter">0.009s</div>
 <p>duration</p>
 </div>
 </td>
@@ -63,12 +63,6 @@
 <li>
 <a href="#tab0">Tests</a>
 </li>
-<li>
-<a href="#tab1">Standard output</a>
-</li>
-<li>
-<a href="#tab2">Standard error</a>
-</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Tests</h2>
@@ -81,13 +75,18 @@
 </tr>
 </thead>
 <tr>
-<td class="success">dateTimeNull</td>
-<td class="success">0.025s</td>
+<td class="success">dateTimeNull()</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">getField</td>
-<td class="success">0.076s</td>
+<td class="success">getDescriptionNUll()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getField()</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -97,162 +96,45 @@
 </tr>
 <tr>
 <td class="success">isCompleted()</td>
-<td class="success">0.003s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">setGetDateTime</td>
-<td class="success">0.475s</td>
+<td class="success">setGetDateTime()</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">setGetDescription</td>
-<td class="success">0.044s</td>
+<td class="success">setGetDescription()</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">setGetLocationEmptyNull</td>
-<td class="success">0.053s</td>
+<td class="success">setGetLocationEmptyNull()</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">setGetLocationNotEmpty</td>
-<td class="success">0.054s</td>
+<td class="success">setGetLocationMaxLength()</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">setGetLocationTooLong</td>
-<td class="success">0.209s</td>
+<td class="success">setGetLocationNotEmpty()</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testGetID</td>
-<td class="success">0.023s</td>
+<td class="success">setGetLocationTooLong()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetID()</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 </table>
-</div>
-<div id="tab1" class="tab">
-<h2>Standard output</h2>
-<span class="code">
-<pre>timestamp = 2023-03-24T19:14:44.591982900, TaskImplTest:setGetLocationEmptyNull = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = -2287133299089109141   | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:44.645992400, TaskImplTest:setGetLocationNotEmpty = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = -1755977899224640914   | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:44.668996300, TaskImplTest:testGetID = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 4          | # of all combined edge cases
-edge-cases#tried = 4          | # of edge cases tried in current run
-seed = 1384051474611831604    | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:44.694000700, TaskImplTest:dateTimeNull = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = -6127353597794214949   | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:44.738508400, TaskImplTest:setGetDescription = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 3          | # of all combined edge cases
-edge-cases#tried = 3          | # of edge cases tried in current run
-seed = -2293808480336435993   | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:44.948045200, TaskImplTest:setGetLocationTooLong = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = -1963422545397042185   | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:45.423128300, TaskImplTest:setGetDateTime = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 6          | # of all combined edge cases
-edge-cases#tried = 6          | # of edge cases tried in current run
-seed = -8442724175363671581   | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:45.499141300, TaskImplTest:getField = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = 4085636439931085379    | random seed to reproduce generated values
-
-
-</pre>
-</span>
-</div>
-<div id="tab2" class="tab">
-<h2>Standard error</h2>
-<span class="code">
-<pre>Mar 24, 2023 7:14:44 PM net.jqwik.engine.execution.CheckedProperty maybeWarnOnMultipleTriesWithoutForallParameters
-WARNING: Running Property [TaskImplTest:setGetLocationEmptyNull] in container [au.edu.sydney.brawndo.erp.todo.TaskImplTest] without any @ForAll parameters for 1000 tries.
-    Maybe you want to change it into an @Example?
-Mar 24, 2023 7:14:44 PM net.jqwik.engine.execution.CheckedProperty maybeWarnOnMultipleTriesWithoutForallParameters
-WARNING: Running Property [TaskImplTest:dateTimeNull] in container [au.edu.sydney.brawndo.erp.todo.TaskImplTest] without any @ForAll parameters for 1000 tries.
-    Maybe you want to change it into an @Example?
-</pre>
-</span>
 </div>
 </div>
 <div id="footer">
@@ -262,7 +144,7 @@ WARNING: Running Property [TaskImplTest:dateTimeNull] in container [au.edu.sydne
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.2</a> at 24 Mar 2023, 7:14:46 pm</p>
+<a href="http://www.gradle.org">Gradle 7.2</a> at 25 Mar 2023, 10:23:51 pm</p>
 </div>
 </div>
 </body>

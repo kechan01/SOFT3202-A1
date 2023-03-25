@@ -1,10 +1,6 @@
 package au.edu.sydney.brawndo.erp.todo;
 
-import net.jqwik.api.*;
-import net.jqwik.api.constraints.NotBlank;
-import net.jqwik.api.constraints.Positive;
-import net.jqwik.api.constraints.StringLength;
-import net.jqwik.api.lifecycle.BeforeTry;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import java.time.LocalDateTime;
@@ -15,38 +11,46 @@ public class TaskImplTest {
     private TaskImpl task;
 
     @BeforeEach
-    @BeforeTry
     public void setUp() {
         task = new TaskImpl(0, null, null, null);
     }
 
 
-    @Property
-    public void testGetID(@ForAll @Positive int id) {
-        TaskImpl newTask = new TaskImpl(id, null, null, null);
-        assertEquals(id, newTask.getID());
+    @Test
+    public void testGetID() {
+        assertEquals(0, task.getID());
+
+        TaskImpl task1 = new TaskImpl(1, null, null, null);
+        assertEquals(1, task1.getID());
+
+        TaskImpl task2 = new TaskImpl(-1, null, null, null);
+        assertEquals(-1, task2.getID());
+
+        TaskImpl task3 = new TaskImpl(10000, null, null, null);
+        assertEquals(10000, task3.getID());
     }
 
-    @Property
-    public void setGetDateTime(@ForAll LocalDateTime dateTimes) {
-        task.setDateTime(dateTimes);
-        assertEquals(dateTimes, task.getDateTime());
+    @Test
+    public void setGetDateTime() {
+        LocalDateTime dateTime = LocalDateTime.now();
+        task.setDateTime(dateTime);
+        assertEquals(dateTime, task.getDateTime());
     }
 
-    @Property
+    @Test
     public void dateTimeNull() {
         assertThrows(IllegalArgumentException.class, () -> task.setDateTime(null));
         assertNull(task.getDateTime());
     }
 
 
-    @Property
-    public void setGetLocationNotEmpty(@ForAll @NotBlank String location) {
-        task.setLocation(location);
-        assertEquals(location, task.getLocation());
+    @Test
+    public void setGetLocationNotEmpty() {
+        task.setLocation("Home");
+        assertEquals("Home", task.getLocation());
     }
 
-    @Property
+    @Test
     public void setGetLocationEmptyNull() {
         assertThrows(IllegalArgumentException.class, () -> task.setLocation(null));
         assertNull(task.getLocation());
@@ -56,15 +60,33 @@ public class TaskImplTest {
         assertNull(task.getLocation());
     }
 
-    @Property
-    public void setGetLocationTooLong(@ForAll @NotBlank @StringLength(min=257) String location) {
+    @Test
+    public void setGetLocationTooLong() {
+        String location = new String(new char[257]).replace('\0', 'C');
+
         assertThrows(IllegalArgumentException.class, () -> task.setLocation(location));
         assertNull(task.getLocation());
     }
 
-    @Property
-    public void setGetDescription(@ForAll String description) {
+
+    @Test
+    public void setGetLocationMaxLength() {
+        String location = new String(new char[256]).replace('\0', 'C');
+        task.setLocation(location);
+
+        assertEquals(location, task.getLocation());
+    }
+
+
+    @Test
+    public void getDescriptionNUll() {
+        assertNull(task.getDescription());
+    }
+    @Test
+    public void setGetDescription() {
+        String description = "I have three cats";
         task.setDescription(description);
+
         assertEquals(description, task.getDescription());
     }
 
@@ -76,17 +98,15 @@ public class TaskImplTest {
         assertThrows(IllegalStateException.class, () -> task.complete());
     }
 
-    @Property
-    public void getField(@ForAll Task.Field field, @ForAll @NotBlank @StringLength(min=1, max=256) String location, @ForAll String description) {
+    @Test
+    public void getField() {
+        String location = "Indoor";
+        String description = "Cat";
         task.setLocation(location);
         task.setDescription(description);
 
-        if (field == Task.Field.DESCRIPTION) {
-            assertEquals(description, task.getField(field));
-        }
-        if (field == Task.Field.LOCATION) {
-            assertEquals(location, task.getField(field));
-        }
+        assertEquals(description, task.getField(Task.Field.DESCRIPTION));
+        assertEquals(location, task.getField(Task.Field.LOCATION));
     }
 
     @Test

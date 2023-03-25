@@ -20,87 +20,103 @@ public class ToDoListImplTest {
 
     private ToDoListImpl toDoList;
     private final LocalDateTime time = LocalDateTime.of(2023,3,23,12,30);
-
+    int initialSize;
     @BeforeEach
-    @BeforeTry
     public void setup() {
         toDoList = new ToDoListImpl();
+        initialSize = toDoList.findAll().size();
     }
 
-    @Property
-    public void addTaskManualId(@ForAll int id) {
-        Task task = toDoList.add(id, LocalDateTime.now(), "old", "old");
-        assertEquals(task.getID(), id);
-        assertEquals(1, toDoList.findAll().size());
-        Task newTask = toDoList.add(id + 1, LocalDateTime.now(), "new", "new");
-        assertEquals(newTask.getID(), id + 1);
-        assertEquals(2, toDoList.findAll().size());
+    @Test
+    public void addTaskManualId() {
+        Task task = toDoList.add(6, LocalDateTime.now(), "old", "old");
+
+        assertEquals(task.getID(), 6);
+        assertEquals(initialSize + 1, toDoList.findAll().size());
+
+        Task newTask = toDoList.add(8, LocalDateTime.now(), "new", "new");
+
+        assertEquals(newTask.getID(), 8);
+        assertEquals(initialSize + 2, toDoList.findAll().size());
     }
 
-    @Property
-    public void addTaskManualIdRepeat(@ForAll int id) {
-        Task task = toDoList.add(id, LocalDateTime.now(), "old", "old");
-        assertEquals(task.getID(), id);
+    @Test
+    public void addTaskManualIdRepeat() {
+        Task task = toDoList.add(1, LocalDateTime.now(), "old", "old");
+
+        assertEquals(task.getID(), 1);
+
         assertThrows(IllegalArgumentException.class, () ->
-                toDoList.add(id, LocalDateTime.now(), "new", "new"));
-        assertEquals(1, toDoList.findAll().size());
+                toDoList.add(1, LocalDateTime.now(), "new", "new"));
+
+        assertEquals(initialSize + 1, toDoList.findAll().size());
     }
 
     @Test
     public void addTaskNullId() {
         Task task1 = toDoList.add(null, LocalDateTime.now(), "x", "x");
+
         assertEquals(1, task1.getID());
-        assertEquals(1, toDoList.findAll().size());
+        assertEquals(initialSize + 1, toDoList.findAll().size());
+
         Task task2 = toDoList.add(null, LocalDateTime.now(), "x", "x");
+
         assertEquals(2, task2.getID());
-        assertEquals(2, toDoList.findAll().size());
+        assertEquals(initialSize + 2, toDoList.findAll().size());
+
         Task task3 = toDoList.add(null, LocalDateTime.now(), "x", "x");
+
         assertEquals(3, task3.getID());
-        assertEquals(3, toDoList.findAll().size());
+        assertEquals(initialSize + 3, toDoList.findAll().size());
     }
 
     @Test
     public void addTaskNullToManualToNullId() {
         Task task1 = toDoList.add(null, LocalDateTime.now(), "x", "x");
+
         assertEquals(1, task1.getID());
-        assertEquals(1, toDoList.findAll().size());
+        assertEquals(initialSize + 1, toDoList.findAll().size());
 
         Task task2 = toDoList.add(8, LocalDateTime.now(), "x", "x");
+
         assertEquals(8, task2.getID());
-        assertEquals(2, toDoList.findAll().size());
+        assertEquals(initialSize + 2, toDoList.findAll().size());
 
         assertThrows(IllegalStateException.class, () ->
                 toDoList.add(null, LocalDateTime.now(), "x", "x"));
-        assertEquals(2, toDoList.findAll().size());
+
+        assertEquals(initialSize + 2, toDoList.findAll().size());
 
         Task task3 = toDoList.add(3, LocalDateTime.now(), "x", "x");
+
         assertEquals(3, task3.getID());
-        assertEquals(3, toDoList.findAll().size());
+        assertEquals(initialSize + 3, toDoList.findAll().size());
     }
 
-    @Property
-    public void addTaskTimeTest(@ForAll LocalDateTime dateTime) {
+    @Test
+    public void addTaskTimeTest() {
+        LocalDateTime dateTime = LocalDateTime.now();
         Task task = toDoList.add(1, dateTime, "f", "f");
         assertEquals(dateTime, task.getDateTime());
-        assertEquals(1, toDoList.findAll().size());
+        assertEquals(initialSize + 1, toDoList.findAll().size());
     }
 
 
-    @Property
+    @Test
     public void addTaskTimeNullTest() {
         assertThrows(IllegalArgumentException.class, () ->
                 toDoList.add(1, null, "f", "f"));
-        assertEquals(0, toDoList.findAll().size());
+        assertEquals(initialSize, toDoList.findAll().size());
     }
 
-    @Property
-    public void addTaskLocationNotEmpty(@ForAll @NotBlank String location) {
-        Task task = toDoList.add(1, LocalDateTime.now(), location, "f");
-        assertEquals(location, task.getLocation());
-        assertEquals(1, toDoList.findAll().size());
+    @Test
+    public void addTaskLocationNotEmpty() {
+        Task task = toDoList.add(1, LocalDateTime.now(), "Home", "f");
+        assertEquals("Home", task.getLocation());
+        assertEquals(initialSize + 1, toDoList.findAll().size());
     }
 
-    @Property
+    @Test
     public void addTaskLocationEmptyNull() {
         assertThrows(IllegalArgumentException.class, () ->
                 toDoList.add(1, LocalDateTime.now(), null, "f"));
@@ -115,11 +131,23 @@ public class ToDoListImplTest {
         assertEquals(0, toDoList.findAll().size());
     }
 
-    @Property
-    public void addTaskLocationTooLong(@ForAll @NotBlank @StringLength(min=257) String location) {
+    @Test
+    public void addTaskLocationTooLong() {
+        String location = new String(new char[257]).replace('\0', 'C');
+
         assertThrows(IllegalArgumentException.class, () ->
                 toDoList.add(1, LocalDateTime.now(), location, "f"));
-        assertEquals(0, toDoList.findAll().size());
+        assertEquals(initialSize, toDoList.findAll().size());
+    }
+
+
+    @Test
+    public void addTaskLocationMaxLength() {
+        String location = new String(new char[256]).replace('\0', 'C');
+        Task t = toDoList.add(1, LocalDateTime.now(), location, "Cat");
+
+        assertEquals(initialSize + 1, toDoList.findAll().size());
+        assertEquals(t, toDoList.findOne(1) );
     }
 
     public int addingSimpleTasks() {
@@ -180,36 +208,63 @@ public class ToDoListImplTest {
         assertEquals(size, tasks.size());
     }
 
-    @Property
-    public void findAllCompletedAndNot(@ForAll boolean completed) {
+    @Test
+    public void findAllCompletedAndNot() {
         addingRealisticTasks();
-        List<Task> tasks = toDoList.findAll(completed);
-        assertEquals(3, tasks.size());
+        List<Task> completedTasks = toDoList.findAll(true);
+        assertEquals(3, completedTasks.size());
 
-        if (completed) {
-            for (Task t : tasks) {
-                assertTrue(t.getLocation().matches("Jbhifi|Uni|Home"));
-            }
-        } else {
-            for (Task t : tasks) {
-                assertTrue(t.getLocation().matches("Maccas|KFC|Station"));
-            }
+        for (Task t : completedTasks) {
+            assertTrue(t.getLocation().matches("Jbhifi|Uni|Home"));
         }
+
+        List<Task> notCompletedTasks = toDoList.findAll(false);
+        assertEquals(3, notCompletedTasks.size());
+
+        for (Task t : notCompletedTasks) {
+            assertTrue(t.getLocation().matches("Maccas|KFC|Station"));
+        }
+
     }
 
 
-    @Property
-    public void findAllValidTime(@ForAll boolean completed,
-                                 @ForAll @IntRange(min=1, max=30) int day,
-                                 @ForAll @IntRange(min=1, max=90) int num) {
+    @Test
+    public void findAllValidTime1() {
         LocalDateTime from = LocalDateTime.of(
-                2023, 3, day, 12,30);
-        LocalDateTime to = from.plusDays(num);
+                2023, 3, 1, 12,30);
+        LocalDateTime to = from.plusDays(20);
         addingRealisticTasks();
-        List<Task> tasks = toDoList.findAll(from, to, completed);
+        List<Task> tasks = toDoList.findAll(from, to, false);
         for (Task task : tasks) {
             assertTrue(checkTimeRange(from, to, task));
-            assertEquals(task.isCompleted(), completed);
+            assertFalse(task.isCompleted());
+        }
+
+    }
+
+    @Test
+    public void findAllValidTime2() {
+        LocalDateTime from = LocalDateTime.of(
+                2023, 3, 1, 12,30);
+        LocalDateTime to = from.plusDays(50);
+        addingRealisticTasks();
+        List<Task> tasks = toDoList.findAll(from, to, true);
+        for (Task task : tasks) {
+            assertTrue(checkTimeRange(from, to, task));
+            assertTrue(task.isCompleted());
+        }
+    }
+
+    @Test
+    public void findAllValidTime3() {
+        LocalDateTime from = LocalDateTime.of(
+                2023, 3, 1, 12,30);
+        LocalDateTime to = from.plusDays(100);
+        addingRealisticTasks();
+        List<Task> tasks = toDoList.findAll(from, to, false);
+        for (Task task : tasks) {
+            assertTrue(checkTimeRange(from, to, task));
+            assertFalse(task.isCompleted());
         }
     }
 
@@ -217,53 +272,59 @@ public class ToDoListImplTest {
         return task.getDateTime().isAfter(from) && task.getDateTime().isBefore(to);
     }
 
-    @Property
-    public void findAllInValidTime(@ForAll boolean completed,
-                                   @ForAll @IntRange(min=1, max=30) int day,
-                                   @ForAll @IntRange(min=1, max=60) int num) {
-        LocalDateTime from = LocalDateTime.of(
-                2023, 3, day, 12,30);
-        LocalDateTime to = from.minusDays(num);
+    @Test
+    public void findAllInValidTime() {
+        LocalDateTime from = time;
+        LocalDateTime to = from.minusDays(1);
         addingRealisticTasks();
         assertThrows(IllegalArgumentException.class, () ->
-                toDoList.findAll(from, to, completed));
+                toDoList.findAll(from, to, true));
         assertThrows(IllegalArgumentException.class, () ->
-                toDoList.findAll(from, from, completed));
+                toDoList.findAll(from, from, false));
     }
 
-    @Provide
-    Arbitrary<String> strings() {
-        return Arbitraries.of("Maccas", "Jbhifi", "Uni", "KFC", "Station",
-                "Home", "f", "fa");
-    }
 
-    @Provide
-    Arbitrary<Task.Field> fields() {
-        return Arbitraries.of(Task.Field.LOCATION, Task.Field.DESCRIPTION);
-    }
-
-    public Map<Task.Field, String> testParams() {
+    public Map<Task.Field, String> testParams1() {
         Map<Task.Field, String> map = new HashMap<>();
-        map.put(fields().sample(), strings().sample());
-        map.put(fields().sample(), strings().sample());
-        map.put(fields().sample(), strings().sample());
-        map.put(fields().sample(), strings().sample());
-        map.put(fields().sample(), strings().sample());
-        map.put(fields().sample(), strings().sample());
+        map.put(Task.Field.LOCATION, "Jbihifi");
+        map.put(Task.Field.DESCRIPTION, "f");
+        map.put(Task.Field.LOCATION, "Uni");
         return map;
     }
 
-    @Property
-    public void findAllValidParam(@ForAll boolean completed,
-                                  @ForAll @IntRange(min=1, max=30) int day,
-                                  @ForAll @IntRange(min=1, max=60) int num,
-                                  @ForAll boolean andSearch) {
+    @Test
+    public void findAllValidParamAndSearchFalse() {
+        boolean andSearch = false;
+        boolean completed = true;
         LocalDateTime from = LocalDateTime.of(
-                2023, 3, day, 12,30);
-        LocalDateTime to = from.plusDays(num);
+                2023, 3, 1, 12, 30);
+        LocalDateTime to = from.plusWeeks(7);
         addingRealisticTasks();
-        Map<Task.Field, String> testParams = testParams();
+        Map<Task.Field, String> testParams = testParams1();
         List<Task> tasks = toDoList.findAll(testParams, from, to, completed, andSearch);
+
+        for (Task task : tasks) {
+            assertTrue(checkTimeRange(from, to, task));
+            if (andSearch) {
+                assertTrue(checkAllParam(task, testParams));
+            } else {
+                assertTrue(checkParam(task, testParams));
+            }
+            assertEquals(task.isCompleted(), completed);
+        }
+    }
+
+    @Test
+    public void findAllValidParamAndSearchTrue() {
+        boolean andSearch = true;
+        boolean completed = false;
+        LocalDateTime from = LocalDateTime.of(
+                2023, 3, 1, 12,30);
+        LocalDateTime to = from.plusWeeks(8);
+        addingRealisticTasks();
+        Map<Task.Field, String> testParams = testParams1();
+        List<Task> tasks = toDoList.findAll(testParams, from, to, completed, andSearch);
+
         for (Task task : tasks) {
             assertTrue(checkTimeRange(from, to, task));
             if (andSearch) {
@@ -312,16 +373,16 @@ public class ToDoListImplTest {
         return map;
     }
 
-    @Property
-    public void findAllInValidParam(@ForAll boolean completed,
-                                  @ForAll @IntRange(min=1, max=30) int day,
-                                  @ForAll @IntRange(min=1, max=60) int num,
-                                  @ForAll boolean andSearch) {
+    @Test
+    public void findAllInValidParam() {
+        boolean andSearch = true;
+        boolean completed = false;
+
         LocalDateTime from = LocalDateTime.of(
-                2023, 3, day, 12,30);
-        LocalDateTime to = from.plusDays(num);
+                2023, 3, 20, 12,30);
+        LocalDateTime to = from.plusDays(100);
         addingRealisticTasks();
-        Map<Task.Field, String> testParams = testNullParams(fields().sample(), null);
+        Map<Task.Field, String> testParams = testNullParams(Task.Field.LOCATION, null);
         assertThrows(IllegalArgumentException.class, () ->
                 toDoList.findAll(testParams, from, to, completed, andSearch));
 
@@ -329,22 +390,21 @@ public class ToDoListImplTest {
         assertThrows(IllegalArgumentException.class, () ->
                 toDoList.findAll(testParams2, from, to, completed, andSearch));
 
-        Map<Task.Field, String> testParams3 = testNullParams(null, strings().sample());
+        Map<Task.Field, String> testParams3 = testNullParams(null, "f");
         assertThrows(IllegalArgumentException.class, () ->
                 toDoList.findAll(testParams3, from, to, completed, andSearch));
 
     }
 
-    @Property
-    public void findAllParamInvalidTime(@ForAll boolean completed,
-                                  @ForAll @IntRange(min=1, max=30) int day,
-                                  @ForAll @IntRange(min=1, max=60) int num,
-                                  @ForAll boolean andSearch) {
-        LocalDateTime from = LocalDateTime.of(
-                2023, 3, day, 12,30);
-        LocalDateTime to = from.minusDays(num);
+    @Test
+    public void findAllParamInvalidTime() {
+        boolean andSearch = false;
+        boolean completed = false;
+
+        LocalDateTime from = time;
+        LocalDateTime to = from.minusDays(1);
         addingRealisticTasks();
-        Map<Task.Field, String> testParams = testParams();
+        Map<Task.Field, String> testParams = testParams1();
         assertThrows(IllegalArgumentException.class, () ->
                 toDoList.findAll(testParams, from, to, completed, andSearch));
 

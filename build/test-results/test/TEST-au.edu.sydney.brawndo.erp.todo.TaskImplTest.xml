@@ -1,126 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="au.edu.sydney.brawndo.erp.todo.TaskImplTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2023-03-24T08:14:00" hostname="DESKTOP-SEBBPG2" time="44.757">
+<testsuite name="au.edu.sydney.brawndo.erp.todo.TaskImplTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2023-03-25T11:23:51" hostname="DESKTOP-SEBBPG2" time="0.016">
   <properties/>
-  <testcase name="isCompleted()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.003"/>
+  <testcase name="setGetLocationEmptyNull()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.001"/>
+  <testcase name="setGetLocationMaxLength()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.0"/>
+  <testcase name="setGetLocationNotEmpty()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.0"/>
+  <testcase name="testGetID()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.0"/>
+  <testcase name="isCompleted()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.002"/>
+  <testcase name="getDescriptionNUll()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.001"/>
+  <testcase name="dateTimeNull()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.001"/>
+  <testcase name="setGetDescription()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.0"/>
+  <testcase name="setGetLocationTooLong()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.001"/>
   <testcase name="getFieldNull()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.001"/>
-  <testcase name="setGetLocationEmptyNull" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.053"/>
-  <testcase name="setGetLocationNotEmpty" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.054"/>
-  <testcase name="testGetID" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.023"/>
-  <testcase name="dateTimeNull" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.025"/>
-  <testcase name="setGetDescription" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.044"/>
-  <testcase name="setGetLocationTooLong" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.209"/>
-  <testcase name="setGetDateTime" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.475"/>
-  <testcase name="getField" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.076"/>
-  <system-out><![CDATA[timestamp = 2023-03-24T19:14:44.591982900, TaskImplTest:setGetLocationEmptyNull = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = -2287133299089109141   | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:44.645992400, TaskImplTest:setGetLocationNotEmpty = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = -1755977899224640914   | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:44.668996300, TaskImplTest:testGetID = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 4          | # of all combined edge cases
-edge-cases#tried = 4          | # of edge cases tried in current run
-seed = 1384051474611831604    | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:44.694000700, TaskImplTest:dateTimeNull = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = -6127353597794214949   | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:44.738508400, TaskImplTest:setGetDescription = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 3          | # of all combined edge cases
-edge-cases#tried = 3          | # of edge cases tried in current run
-seed = -2293808480336435993   | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:44.948045200, TaskImplTest:setGetLocationTooLong = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = -1963422545397042185   | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:45.423128300, TaskImplTest:setGetDateTime = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 6          | # of all combined edge cases
-edge-cases#tried = 6          | # of edge cases tried in current run
-seed = -8442724175363671581   | random seed to reproduce generated values
-
-
-timestamp = 2023-03-24T19:14:45.499141300, TaskImplTest:getField = 
-                              |-----------------------jqwik-----------------------
-tries = 1000                  | # of calls to property
-checks = 1000                 | # of not rejected calls
-generation = RANDOMIZED       | parameters are randomly generated
-after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
-when-fixed-seed = ALLOW       | fixing the random seed is allowed
-edge-cases#mode = MIXIN       | edge cases are mixed in
-edge-cases#total = 0          | # of all combined edge cases
-edge-cases#tried = 0          | # of edge cases tried in current run
-seed = 4085636439931085379    | random seed to reproduce generated values
-
-
-]]></system-out>
-  <system-err><![CDATA[Mar 24, 2023 7:14:44 PM net.jqwik.engine.execution.CheckedProperty maybeWarnOnMultipleTriesWithoutForallParameters
-WARNING: Running Property [TaskImplTest:setGetLocationEmptyNull] in container [au.edu.sydney.brawndo.erp.todo.TaskImplTest] without any @ForAll parameters for 1000 tries.
-    Maybe you want to change it into an @Example?
-Mar 24, 2023 7:14:44 PM net.jqwik.engine.execution.CheckedProperty maybeWarnOnMultipleTriesWithoutForallParameters
-WARNING: Running Property [TaskImplTest:dateTimeNull] in container [au.edu.sydney.brawndo.erp.todo.TaskImplTest] without any @ForAll parameters for 1000 tries.
-    Maybe you want to change it into an @Example?
-]]></system-err>
+  <testcase name="setGetDateTime()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.001"/>
+  <testcase name="getField()" classname="au.edu.sydney.brawndo.erp.todo.TaskImplTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>
